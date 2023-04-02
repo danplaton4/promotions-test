@@ -1,0 +1,15 @@
+gesdinet_jwt_refresh_token:
+  refresh_token_class: App\Entity\RefreshToken
+  ttl: '%env(int:JWT_TOKEN_TTL_REMEMBER_ME)%'
+  single_use: true
+
+  # Use cookies for the refresh token
+  cookie:
+    enabled: true
+    remove_token_from_body: true # default value
+    # Cookie parameters
+    http_only: true              # default value
+    same_site: none
+    secure: true                 # default value
+    path: /api/auth
+    domain: null                 # default value
