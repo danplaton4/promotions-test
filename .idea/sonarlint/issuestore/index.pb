@@ -39,8 +39,6 @@ H
 php/php.ini,c/b/cb6e6b526918510297f233c3d659c8d60a9fd1c2
 >
 php/Dockerfile,3/0/30b94f5d4d38a84826117d605e245f15aa2343e4
-=
-.dockerignore,0/5/05a721ebe3ba0754116825ed1359ff1785f4bbac
 8
 Makefile,8/3/836efb6e25a091dcb4ff8e1dbb2f0be6a5cbf14c
 4
