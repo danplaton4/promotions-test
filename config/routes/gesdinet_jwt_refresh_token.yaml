@@ -1,5 +1,0 @@
-gesdinet_jwt_refresh_token:
-  path: /api/auth/refresh
-
-gesdinet_jwt_logout:
-  path: /api/auth/logout

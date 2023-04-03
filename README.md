@@ -11,14 +11,12 @@ CodeFair-test is a repository, API-ready, that includes features like:
 
 ## Installation
 
-CodeFair Test requires [PHP](https://www.php.net/) 8+ to run and also [Composer](https://getcomposer.org/) package manager
-
-Install the dependencies.
-
-```sh
-cd codefair-test
-composer install
-```
+1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
+2. Run `make build` to build fresh images
+3. Run `make up` (the logs will be displayed in the current shell)
+4. Install the dependencies `make vendor`
+5. Open `http://localhost:8001` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
+6. Run `make down` to stop the Docker containers.
 
 ## Configuration
 

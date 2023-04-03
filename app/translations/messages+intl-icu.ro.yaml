@@ -1,0 +1,33 @@
+duplicated: 'O entitate cu {attribute} furnizat există deja.|O entitate cu {attribute} furnizat există deja.'
+
+validation:
+  required: '{field} este un câmp obligatoriu.|{field} este un câmp obligatoriu, prin urmare valoarea sa nu poate fi goală.'
+  invalid: '{field} este invalid.|{field} nu se potrivește cu valorile posibile: {values}'
+  email: '{field} este invalid.|{field} nu are un format RFC 3696 valid'
+  date: '{field} este invalid.|{field} - DateTime, trebuie să aibă formatul [Y-m-d].'
+  datetime: '{field} este invalid.|{field} - DateTime, trebuie să aibă formatul [Y-m-d H:i:s].'
+  time: '{field} este invalid.|{field} - Time, trebuie să aibă formatul [HH:MM].'
+  integer: '{field} este invalid.|{field} câmpul trebuie să fie un număr întreg.'
+  numeric: '{field} este invalid.|{field} câmpul trebuie să aibă o valoare numerică (integer or float).'
+  zip: '{field} este invalid.|{field} câmpul trebuie să fie un cod poștal.'
+  bool: '{field} este invalid.|{field} câmpul este boolean, trebuie să fie [true sau false] sau [0 sau 1].'
+  password: 'Parola dvs. trebuie să aibă peste 8 caractere, trebuie să conțină cel puțin o literă mare, cel puțin o literă minusculă, cel puțin o cifră și cel puțin un caracter special.|Parola specificată nu se potrivește cu constrângerile de putere.'
+  latitude: '{field} este invalid.|{field} câmpul trebuie să fie o valoare zecimală.'
+  longitude: '{field} este invalid.|{field} câmpul trebuie să fie o valoare zecimală.'
+  hex: '{field} este invalid.|{field} câmpul trebuie să fie o valoare de cod de culoare HEX.'
+  url: '{field} este invalid.|{field} câmpul trebuie să fie o adresă URL validă.'
+  range: '{field} este invalid (furnizați un număr între {min} și {max}).|Valoarea minimă poate fi {min} și valoarea maximă poate fi {max}'
+  choice: '{field} este invalid.|{field} nu se potrivește cu valorile posibile: {values}'
+  string: '{field} este invalid.|{field} trebuie să fie un șir de caractere'
+  arrayInt: '{field} este invalid.|{field} câmpul trebuie să fie un vector de numere întregi.'
+  arrayNotEmpty: '{field} este invalid.|{field} câmpul nu trebuie să fie gol.'
+
+utils:
+  internalServer: 'Eroare de server intern.|Eroare de server intern - vă rugăm să contactați administratorul.'
+  notFound: 'Resursa specificată nu a fost găsită.|Resursa nu a fost găsită.'
+  notAuthorized: 'Neautorizat.|Utilizatorul nu este autorizat să acceseze această resursă.'
+  notAllowed: 'Nepermis|Utilizatorul nu are permisiunea de a accesa această resursă'
+  badRequest: 'Solicitare greșită|Serverul nu a putut procesa cererea din cauza informațiilor nevalide trimise de client'
+
+media:
+  error: 'Fișierele nu pot fi încărcate.'

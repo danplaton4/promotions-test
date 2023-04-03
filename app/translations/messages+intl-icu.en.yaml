@@ -1,0 +1,33 @@
+duplicated: 'An entity with the provided {attribute} already exists.|An entity with the provided {attribute} already exists.'
+
+validation:
+  required: '{field} is a required field.|{field} is a required field, so its value cannot be empty.'
+  invalid: '{field} is invalid.|{field} does not match possible values: {values}'
+  email: '{field} is invalid.|{field} does not have a valid RFC 3696 format'
+  date: '{field} is invalid.|{field} - DateTime, must have the [Y-m-d] format.'
+  datetime: '{field} is invalid.|{field} - DateTime, must have the [Y-m-d H:i:s] format.'
+  time: '{field} is invalid.|{field} - Time, must have the [HH:MM] format.'
+  integer: '{field} is invalid.|{field} field must be an integer.'
+  numeric: '{field} is invalid.|{field} field must have a numeric value (integer or float).'
+  zip: '{field} is invalid.|{field} field must be a zip code.'
+  bool: '{field} is invalid.|{field} field is boolean, must be [true or false] or [0 or 1].'
+  password: 'Your password must be over 8 characters, must contain at least one uppercase letter, at least one lowercase letter, at least one digit and at least one special character.|The password specified did not match the strength constraints.'
+  latitude: '{field} is invalid.|{field} field must be a decimal value.'
+  longitude: '{field} is invalid.|{field} field must be a decimal value.'
+  hex: '{field} is invalid.|{field} field must be a HEX color code value.'
+  url: '{field} is invalid.|{field} field must be a valid URL.'
+  range: '{field} is invalid (provide a number between {min} and {max}).|The minimum value can be {min} and the maximum value can be {max}'
+  choice: '{field} is invalid.|{field} does not match possible values: {values}'
+  string: '{field} is invalid.|{field} must be a string'
+  arrayInt: '{field} is invalid.|{field} field must be an array of integers.'
+  arrayNotEmpty: '{field} is invalid.|{field} field must not be empty.'
+
+utils:
+  internalServer: 'Internal server error|Internal server error - please contact the administrator.'
+  notFound: 'The specified resource was not found.|Resource not found.'
+  notAuthorized: 'Not authorized.|User is not authorized to access this resource.'
+  notAllowed: 'Not allowed|Not allowed'
+  badRequest: 'Bad Request|The server was unable to process the request due to invalid information sent by the client'
+
+media:
+  error: 'Files cannot be uploaded.'
