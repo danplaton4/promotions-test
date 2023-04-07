@@ -2,9 +2,9 @@
 
 namespace App\Model\Validation\Rules;
 
-use App\Model\Constants\MediaType;
+use App\Model\Constant\MediaType;
 use App\Model\Validation\ValidationRules;
-use App\Model\Constants\ValidationType;
+use App\Model\Constant\ValidationType;
 
 
 class MediaUploadValidationRules extends ValidationRules {

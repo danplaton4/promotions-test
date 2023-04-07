@@ -18,7 +18,7 @@ class MediaController extends ApiController {
    * Upload media.
    *
    * Please use this service to upload files.
-   *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\RequestBody(
    *     @OA\MediaType(
    *         mediaType="multipart/form-data",

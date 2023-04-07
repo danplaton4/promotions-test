@@ -31,3 +31,9 @@ utils:
 
 media:
   error: 'Files cannot be uploaded.'
+
+promotions:
+  outsideDate: 'The promotion can not be drawn at this date|The prizes are not given at provided date'
+  outsideHours: 'The promotion can not be drawn at this time|The prizes are to be given from 00:00:00 to 09:00:00 and 20:00:00 to 23:59:59'
+  userPlayed: 'You have drawn the prize for today, please try again tomorrow|The user already drawn a prize for today'
+  noPrizesLeft: 'All the prizes were drawn, please try you luck next time|No available prizes were found to be drawn'

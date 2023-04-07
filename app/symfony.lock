@@ -61,6 +61,9 @@
             "src/Entity/RefreshToken.php"
         ]
     },
+    "knplabs/doctrine-behaviors": {
+        "version": "2.6.2"
+    },
     "lexik/jwt-authentication-bundle": {
         "version": "2.18",
         "recipe": {
@@ -96,18 +99,6 @@
         },
         "files": [
             "config/packages/nelmio_cors.yaml"
-        ]
-    },
-    "stof/doctrine-extensions-bundle": {
-        "version": "1.7",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "main",
-            "version": "1.2",
-            "ref": "e805aba9eff5372e2d149a9ff56566769e22819d"
-        },
-        "files": [
-            "config/packages/stof_doctrine_extensions.yaml"
         ]
     },
     "symfony/console": {

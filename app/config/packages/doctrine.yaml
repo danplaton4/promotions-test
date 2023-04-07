@@ -17,32 +17,6 @@ doctrine:
         dir: '%kernel.project_dir%/src/Entity'
         prefix: 'App\Entity'
         alias: App
-      gedmo_translatable:
-        type: attribute
-        prefix: Gedmo\Translatable\Entity
-        dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translatable/Entity"
-        alias: GedmoTranslatable # (optional) it will default to the name set for the mapping
-        is_bundle: false
-      gedmo_translator:
-        type: attribute
-        prefix: Gedmo\Translator\Entity
-        dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translator/Entity"
-        alias: GedmoTranslator # (optional) it will default to the name set for the mapping
-        is_bundle: false
-    dql:
-      string_functions:
-        replace: DoctrineExtensions\Query\Mysql\Replace
-        substring_index: DoctrineExtensions\Query\Mysql\SubstringIndex
-        lpad: DoctrineExtensions\Query\Mysql\Lpad
-        rpad: DoctrineExtensions\Query\Mysql\Rpad
-        group_concat: DoctrineExtensions\Query\Mysql\GroupConcat
-        regexp: DoctrineExtensions\Query\Mysql\Regexp
-        cast: DoctrineExtensions\Query\Mysql\Cast
-        md5: DoctrineExtensions\Query\Mysql\Md5
-        date: DoctrineExtensions\Query\Mysql\Date
-        date_format: DoctrineExtensions\Query\Mysql\DateFormat
-        extract: DoctrineExtensions\Query\Mysql\Extract
-        now: DoctrineExtensions\Query\Mysql\Now
 
 when@test:
   doctrine:

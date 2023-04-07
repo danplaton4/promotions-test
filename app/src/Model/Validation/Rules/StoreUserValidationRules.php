@@ -2,7 +2,7 @@
 
 namespace App\Model\Validation\Rules;
 
-use App\Model\Constants\ValidationType;
+use App\Model\Constant\ValidationType;
 
 class StoreUserValidationRules {
   // Validation rules

@@ -2,8 +2,8 @@
 
 namespace App\Model\Validation\Rules;
 
-use App\Model\Constants\UserRole;
-use App\Model\Constants\ValidationType;
+use App\Model\Constant\UserRole;
+use App\Model\Constant\ValidationType;
 
 class GetUsersValidationRules {
 // Validation rules

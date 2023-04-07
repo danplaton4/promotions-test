@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\UserProfile;
-use App\Model\Constants\UserRole;
+use App\Model\Constant\UserRole;
 use Exception;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Patch;
@@ -23,6 +23,7 @@ class UsersController extends ApiController {
    *
    * Please use this service to create a user.
    *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\RequestBody(
    *   description="User data",
    *   @OA\JsonContent(
@@ -94,6 +95,7 @@ class UsersController extends ApiController {
    *
    * Please use this service to get a list of users.
    *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\Parameter(
    *     name="enabled", in="query", required=true, description="Filter by users status",
    *     @OA\Schema(
@@ -217,6 +219,7 @@ class UsersController extends ApiController {
    *
    * Please use this service to get user details.
    *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\Parameter(
    *     name="id", in="path", required=true, description="User unique identifier",
    *     @OA\Schema(
@@ -295,6 +298,7 @@ class UsersController extends ApiController {
    *
    * Please use this service to get the authenticated user profile.
    *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\Response(
    *     response=200, description="Returns authenticated user details",
    *     @OA\JsonContent(
@@ -361,6 +365,7 @@ class UsersController extends ApiController {
    *
    * Please use this service to edit user details.
    *
+   * @OA\Parameter(ref="#/components/parameters/Accept-Language")
    * @OA\Parameter(
    *     name="id", in="path", required=true, description="User unique identifier",
    *     @OA\Schema(

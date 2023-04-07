@@ -1,0 +1,39 @@
+duplicated: 'Eine Entität mit dem bereitgestellten {attribute} existiert bereits.|Eine Entität mit dem bereitgestellten {attribute} existiert bereits.'
+
+validation:
+  required: '{field} ist ein Pflichtfeld.|{field} ist ein Pflichtfeld, daher darf sein Wert nicht leer sein.'
+  invalid: '{field} ist ungültig.|{field} stimmt nicht mit möglichen Werten überein: {values}'
+  email: '{field} ist ungültig.|{field} hat kein gültiges RFC 3696-Format'
+  date: '{field} ist ungültig.|{field} - DateTime, muss das Format [Y-m-d] haben.'
+  datetime: '{field} ist ungültig.|{field} - DateTime, muss das Format [Y-m-d H:i:s] haben.'
+  time: '{field} ist ungültig.|{field} - Zeit, muss das Format [HH:MM] haben.'
+  integer: '{field} ist ungültig.|{field} Feld muss eine ganze Zahl sein.'
+  numeric: '{field} ist ungültig.|{field} Feld muss einen numerischen Wert haben (Integer oder Float).'
+  zip: '{field} ist ungültig.|{field} Feld muss eine Postleitzahl sein.'
+  bool: '{field} ist ungültig.|{field} field ist boolesch, muss [true oder false] oder [0 oder 1] sein.'
+  password: 'Ihr Passwort muss länger als 8 Zeichen sein, mindestens einen Großbuchstaben, mindestens einen Kleinbuchstaben, mindestens eine Ziffer und mindestens ein Sonderzeichen enthalten.|Das angegebene Passwort entsprach nicht den Sicherheitsvorgaben.'
+  latitude: '{field} ist ungültig.|{field} Feld muss ein Dezimalwert sein.'
+  longitude: '{field} ist ungültig.|{field} Feld muss ein Dezimalwert sein.'
+  hex: '{field} ist ungültig.|Das Feld {field} muss ein HEX-Farbcodewert sein.'
+  url: '{field} ist ungültig.|{field} Feld muss eine gültige URL sein.'
+  range: '{field} ist ungültig (geben Sie eine Zahl zwischen {min} und {max} an).|Der Mindestwert kann {min} und der Höchstwert {max} sein.'
+  choice: '{field} ist ungültig.|{field} stimmt nicht mit möglichen Werten überein: {values}'
+  string: '{field} ist ungültig.|{field} muss eine Zeichenfolge sein'
+  arrayInt: '{Feld} ist ungültig.|Das Feld {Feld} muss ein Array von Ganzzahlen sein.'
+  arrayNotEmpty: '{field} ist ungültig.|{field} Feld darf nicht leer sein.'
+
+utils:
+  internalServer: 'Interner Serverfehler|Interner Serverfehler - bitte wenden Sie sich an den Administrator.'
+  notFound: 'Die angegebene Ressource wurde nicht gefunden.|Ressource nicht gefunden.'
+  notAuthorized: 'Nicht autorisiert.|Benutzer ist nicht autorisiert, auf diese Ressource zuzugreifen.'
+  notAllowed: 'Nicht erlaubt|Nicht erlaubt'
+  badRequest: 'Ungültige Anfrage|Der Server konnte die Anfrage aufgrund ungültiger Informationen, die vom Client gesendet wurden, nicht verarbeiten'
+
+media:
+  error: 'Dateien können nicht hochgeladen werden.'
+
+promotions:
+  outsideDate: 'Die Aktion kann an diesem Datum nicht gezogen werden|Die Preise werden nicht am angegebenen Datum vergeben'
+  outsideHours: 'Die Aktion kann derzeit nicht ausgelost werden|Die Gewinne werden von 00:00:00 bis 09:00:00 und 20:00:00 bis 23:59:59 vergeben'
+  userPlayed: 'Sie haben den Preis für heute gezogen, bitte versuchen Sie es morgen erneut|Der Benutzer hat bereits einen Preis für heute gezogen'
+  noPrizesLeft: 'Alle Preise wurden verlost, bitte versuchen Sie Ihr Glück beim nächsten Mal|Es wurden keine verfügbaren Preise zur Verlosung gefunden'

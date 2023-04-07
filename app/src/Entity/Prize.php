@@ -5,70 +5,39 @@ namespace App\Entity;
 use App\Repository\PrizeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation\Timestampable;
+use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface;
+use Knp\DoctrineBehaviors\Contract\Entity\TranslatableInterface;
+use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
+use Knp\DoctrineBehaviors\Model\Translatable\TranslatableTrait;
 
 #[ORM\Entity(repositoryClass: PrizeRepository::class)]
-class Prize {
+#[ORM\Table(name: 'prizes')]
+class Prize implements TimestampableInterface, TranslatableInterface {
+  use TimestampableTrait, TranslatableTrait;
+
   #[ORM\Id]
   #[ORM\GeneratedValue]
   #[ORM\Column]
   private ?int $id = null;
 
+  #[ORM\Column(length: 255, unique: true)]
+  private ?string $code = null;
+
   #[ORM\Column(length: 255)]
   private ?string $partnerCode = null;
 
-  #[ORM\Column(length: 255)]
-  private ?string $name = null;
+  #[ORM\ManyToOne(inversedBy: 'prizes')]
+  #[ORM\JoinColumn(nullable: false)]
+  private ?Promotion $promotion = null;
 
-  #[ORM\Column(type: Types::TEXT)]
-  private ?string $description = null;
+  #[ORM\Column]
+  private bool $isWon = false;
 
-  #[ORM\Column(length: 255)]
-  private ?string $code = null;
-
-  #[Timestampable(on: 'update')]
-  #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-  private ?\DateTimeInterface $dateUpdated = null;
-
-  #[Timestampable(on: 'create')]
-  #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-  private ?\DateTimeInterface $dateCreated = null;
-
-  public function getId(): ?int {
+  public function getId(): int {
     return $this->id;
   }
 
-  public function getPartnerCode(): ?string {
-    return $this->partnerCode;
-  }
-
-  public function setPartnerCode(string $partnerCode): self {
-    $this->partnerCode = $partnerCode;
-
-    return $this;
-  }
-
-  public function getName(): ?string {
-    return $this->name;
-  }
-
-  public function setName(string $name): self {
-    $this->name = $name;
-
-    return $this;
-  }
-
-  public function getDescription(): ?string {
-    return $this->description;
-  }
-
-  public function setDescription(string $description): self {
-    $this->description = $description;
-
-    return $this;
-  }
-
-  public function getCode(): ?string {
+  public function getCode(): string {
     return $this->code;
   }
 
@@ -78,22 +47,32 @@ class Prize {
     return $this;
   }
 
-  public function getDateUpdated(): ?\DateTimeInterface {
-    return $this->dateUpdated;
+  public function getPartnerCode(): string {
+    return $this->partnerCode;
   }
 
-  public function setDateUpdated(?\DateTimeInterface $dateUpdated): self {
-    $this->dateUpdated = $dateUpdated;
+  public function setPartnerCode(string $partnerCode): self {
+    $this->partnerCode = $partnerCode;
 
     return $this;
   }
 
-  public function getDateCreated(): ?\DateTimeInterface {
-    return $this->dateCreated;
+  public function getPromotion(): Promotion {
+    return $this->promotion;
   }
 
-  public function setDateCreated(?\DateTimeInterface $dateCreated): self {
-    $this->dateCreated = $dateCreated;
+  public function setPromotion(Promotion $promotion): self {
+    $this->promotion = $promotion;
+
+    return $this;
+  }
+
+  public function isIsWon(): bool {
+    return $this->isWon;
+  }
+
+  public function setIsWon(bool $isWon): self {
+    $this->isWon = $isWon;
 
     return $this;
   }

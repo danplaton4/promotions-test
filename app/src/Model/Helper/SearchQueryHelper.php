@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Helpers;
+namespace App\Model\Helper;
 
 use App\Model\Utility\StringUtility;
 

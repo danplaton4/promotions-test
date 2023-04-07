@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Constants;
+namespace App\Model\Constant;
 
 class MediaType {
   public const AVATAR = "avatar";

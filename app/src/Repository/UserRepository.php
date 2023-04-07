@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use App\Entity\UserProfile;
-use App\Model\Helpers\SearchQueryHelper;
+use App\Model\Helper\SearchQueryHelper;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -55,10 +55,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     $this->save($user, true);
   }
 
-  public function getCount(
-    bool   $enabled,
-    string $q = null
-  ): int {
+  /**
+   * @throws NonUniqueResultException
+   * @throws NoResultException
+   */
+  public function getCount(bool $enabled, string $q = null): int {
     $qb = $this->createQueryBuilder('user');
 
     $qb->select('count(userProfile.id)');
@@ -121,5 +122,4 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     return $qb->getQuery()->getArrayResult();
   }
-
 }

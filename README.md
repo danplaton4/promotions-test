@@ -16,7 +16,8 @@ CodeFair-test is a repository, API-ready, that includes features like:
 3. Run `make up` (the logs will be displayed in the current shell)
 4. Install the dependencies `make vendor`
 5. Open `http://localhost:8001` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-6. Run `make down` to stop the Docker containers.
+6. Generate key pair for jwt token: firstly run `make sh` and then run `php bin/console lexik:jwt:generate-keypair`
+7. Run `make down` to stop the Docker containers.
 
 ## Configuration
 

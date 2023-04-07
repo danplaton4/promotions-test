@@ -7,9 +7,6 @@ parameters:
   project:
     full_upload_dir: '%kernel.project_dir%/public/uploads/'
     public_upload_dir: '/uploads/'
-    client_url: '%env(CLIENT_URL)%'
-    email_notification_from_email: '%env(EMAIL_NOTIFICATION_FROM_EMAIL)%'
-    email_notification_from_name: '%env(EMAIL_NOTIFICATION_FROM_NAME)%'
     pagination:
       perPage: 20
 

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\Service\PromotionService;
 use App\Model\Storage\MediaManager;
 use App\Model\Utility\ArrayUtility;
 use App\Model\Utility\RESTUtility;
@@ -20,7 +21,6 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ApiController extends AbstractFOSRestController {
-
   public function __construct(
     protected JWTTokenManagerInterface     $jwtManager,
     protected RefreshTokenManagerInterface $refreshTokenManager,
@@ -33,11 +33,10 @@ class ApiController extends AbstractFOSRestController {
     protected EntityManagerInterface       $em,
     protected TranslatorInterface          $translator,
     protected MediaManager                 $mediaManager,
-    protected TokenStorageInterface        $tokenStorage
+    protected TokenStorageInterface        $tokenStorage,
+    protected PromotionService             $promotionService
   ) {
   }
-
-  const AUTH_COOKIE_NAME = 'BEARER';
 
   /**
    *  Set listing configuration for pagination and sorting

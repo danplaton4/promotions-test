@@ -3,6 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Prize;
+use App\Entity\Promotion;
+use App\Entity\Winning;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,53 +17,57 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Prize[]    findAll()
  * @method Prize[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PrizeRepository extends ServiceEntityRepository
-{
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Prize::class);
+class PrizeRepository extends ServiceEntityRepository {
+  public function __construct(ManagerRegistry $registry) {
+    parent::__construct($registry, Prize::class);
+  }
+
+  public function save(Prize $entity, bool $flush = false): void {
+    $this->getEntityManager()->persist($entity);
+
+    if ($flush) {
+      $this->getEntityManager()->flush();
     }
+  }
 
-    public function save(Prize $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+  public function remove(Prize $entity, bool $flush = false): void {
+    $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
+    if ($flush) {
+      $this->getEntityManager()->flush();
+    }
+  }
+
+  public function getAvailablePrizes(Promotion $promotion, int $limit, int $offset): array {
+    $prizesQueryBuilder = $this->createQueryBuilder('prize')
+      ->where('prize.promotion = :promotion')
+      ->andWhere('prize.isWon = :isWon')
+      ->setParameter('promotion', $promotion)
+      ->setParameter('isWon', false)
+      ->setMaxResults($limit)
+      ->setFirstResult($offset);
+
+    $prizes = $prizesQueryBuilder->getQuery()->getResult();
+
+    // Query to get all winnings for the prizes
+    $winningsQueryBuilder = $this->getEntityManager()->createQueryBuilder()
+      ->select('winning')
+      ->from(Winning::class, 'winning')
+      ->join('winning.prize', 'prize')
+      ->andWhere('prize IN (:prizes)')
+      ->setParameter('prizes', $prizes);
+
+    $winnings = $winningsQueryBuilder->getQuery()->getResult();
+
+    // Filter out the prizes that were won
+    return array_filter($prizes, function ($prize) use ($winnings) {
+      foreach ($winnings as $winning) {
+        if ($winning->getPrize() === $prize) {
+          return false;
         }
-    }
+      }
 
-    public function remove(Prize $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-//    /**
-//     * @return Prize[] Returns an array of Prize objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Prize
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+      return true;
+    });
+  }
 }

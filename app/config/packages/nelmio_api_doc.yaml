@@ -13,6 +13,14 @@ nelmio_api_doc:
           type: http
           scheme: bearer
           bearerFormat: JWT
+      parameters:
+        Accept-Language:
+          name: Accept-Language
+          in: header
+          description: Language preference
+          required: true
+          schema:
+            type: string
     security:
       - Bearer: [ ]
 
@@ -24,6 +32,8 @@ nelmio_api_doc:
           description: 'Please use this service to authenticate users.'
           operationId: 'post_login'
           security: [ ]
+          parameters:
+            - ref: '#/components/parameters/Accept-Language'
           requestBody:
             description: 'User credentials for authentication'
             content:
@@ -72,6 +82,8 @@ nelmio_api_doc:
           description: 'Please use this service to refresh an cookie for an user'
           operationId: 'post_token_refresh'
           security: [ ]
+          parameters:
+            - ref: '#/components/parameters/Accept-Language'
           responses:
             200:
               description: 'Returns user new refresh token'
@@ -104,6 +116,8 @@ nelmio_api_doc:
           description: 'Please use this service to logout an user'
           operationId: 'post_token_logout'
           security: [ ]
+          parameters:
+            - ref: '#/components/parameters/Accept-Language'
           responses:
             200:
               description: 'Returns logout success'

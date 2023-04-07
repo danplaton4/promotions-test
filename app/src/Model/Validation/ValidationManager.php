@@ -2,7 +2,7 @@
 
 namespace App\Model\Validation;
 
-use App\Model\Constants\ValidationType;
+use App\Model\Constant\ValidationType;
 use Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
