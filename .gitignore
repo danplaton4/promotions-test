@@ -13,5 +13,10 @@
 /app/config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
 
+###> symfony/phpunit-bridge ###
+/app/.phpunit.result.cache
+/app/phpunit.xml
+###< symfony/phpunit-bridge ###
+
 .idea
 mysql
