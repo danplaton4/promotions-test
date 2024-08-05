@@ -101,8 +101,6 @@ The database consists of three main tables:
 - **Prizes**: Contains prize details and associates prizes with partners.
 - **Users**: Contains user details, including authentication data and prize status.
 
-![Database Schema](schema-diagram.png) *(Include a schema diagram image if possible)*
-
 ## API Endpoints
 
 ### User Authentication
